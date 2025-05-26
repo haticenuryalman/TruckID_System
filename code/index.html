@@ -1,0 +1,60 @@
+<!-- HTML5 belgesi olduğunu belirtir -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Truck Detection System</title>
+
+    <!-- Responsive tasarım için viewport ayarı -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap 5.3 CSS bağlantısı (CDN üzerinden) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <style>
+        /* Sayfa genel arka plan rengi */
+        body {
+            background-color: #f2f2f2;
+        }
+
+        /* Video görüntüsü için stil */
+        .video-frame {
+            width: 100%;               /* Mobil uyumluluk için %100 genişlik */
+            max-width: 720px;          /* Maksimum genişlik limiti */
+            border-radius: 8px;        /* Köşeler yuvarlatılmış */
+            border: 2px solid #333;    /* Dış çerçeve rengi koyu gri */
+        }
+
+        /* Durum mesajı görünümü */
+        .status-message {
+            font-size: 1.2rem;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Sayfa içeriğini ortalamak için Bootstrap container -->
+<div class="container text-center mt-4">
+    <!-- Başlık -->
+    <h1 class="mb-4">Truck & Plate Detection</h1>
+
+    <!-- Görüntü çerçevesi (canlı video) -->
+    <div class="d-flex justify-content-center">
+        <!-- Flask'taki `video` route'undan gelen canlı kamera akışı -->
+        <img src="{{ url_for('video') }}" class="video-frame img-fluid" alt="Camera Feed">
+    </div>
+
+    <!-- Sistemden gelen uyarı/durum mesajı -->
+    <div class="status-message text-primary">
+        <p>{{ mesaj }}</p>  <!-- Flask tarafından gönderilen mesaj -->
+    </div>
+
+    <!-- Plaka ekleme sayfasına yönlendiren buton -->
+    <a href="/ekle" class="btn btn-success mt-3">Yeni Plaka Ekle</a>
+</div>
+
+</body>
+</html>
+
