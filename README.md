@@ -18,15 +18,7 @@ Plaka tanıyıp doğrulamak
 
 Roboflow kullanılarak 3 sınıflı (truck, car, plate) bir dataset oluşturuldu. YOLOv8 kullanılarak bu veri seti üzerinde ağırılıklar eğitildi:
 
-# from ultralytics import YOLO
-# model = YOLO('yolov8n.pt')
-# model.train(
-   #  data='data.yaml',
-   #  epochs=50,
-   #  imgsz=640,
-   #  batch=16,
-   #  project='plate_project',
-   #  name='truck_best',
-   #  exist_ok=True
-# )
+<img width="349" alt="Ekran Resmi 2025-05-27 00 10 21" src="https://github.com/user-attachments/assets/a4212c9b-936f-4303-859e-1c3c193e4286" />
+
+
 
