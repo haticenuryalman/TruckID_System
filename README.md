@@ -53,9 +53,13 @@ Uygulama mobil kameradan test edilebilecek şekilde geliştirildi. Telefon kamer
 <img width="666" alt="Ekran Resmi 2025-05-27 00 15 05" src="https://github.com/user-attachments/assets/4da23f83-33b7-4af8-b4ab-56c60767c036" />
 DroidCam veya EpocCam ile mobil cihazlar desteklenebilir.
 
+IP WEBCAM ile mobil kameradan test: 
+
 # 6. Webcam, Video ve Mobil Seçenekleri
 
    <img width="666" alt="Ekran Resmi 2025-05-27 00 16 04" src="https://github.com/user-attachments/assets/efc1aa38-d480-43a1-90fb-3ab65e3ad2a2" />
+
+   Daha önceden kaydedilmiş video ile test: https://youtu.be/USk4UG6hEFU
    
 # 7. Yatay Video Sorunu Çözümü
 
@@ -79,4 +83,6 @@ Mobil kamerayla canlı test yeteneği ekledik
 Yönlendirme mesajlarıyla kullanıcıyı bilgilendiren sistem tasarladık
 
 Tüm kodlar, HTML sayfaları ve model dosyası ile birlikte proje çalışır hâle getirilmiştir.
+
+
 
