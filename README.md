@@ -53,7 +53,7 @@ Uygulama mobil kameradan test edilebilecek şekilde geliştirildi. Telefon kamer
 <img width="666" alt="Ekran Resmi 2025-05-27 00 15 05" src="https://github.com/user-attachments/assets/4da23f83-33b7-4af8-b4ab-56c60767c036" />
 DroidCam veya EpocCam ile mobil cihazlar desteklenebilir.
 
-IP WEBCAM ile mobil kameradan test: 
+IP WEBCAM ile mobil kameradan test: https://youtu.be/BMxCdjOMy6g
 
 # 6. Webcam, Video ve Mobil Seçenekleri
 
