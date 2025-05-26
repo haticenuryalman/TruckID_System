@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Truck + Plate Detection</title>
+    <style>
+        body { font-family: Arial; display: flex; flex-direction: row; align-items: flex-start; padding: 20px; }
+        .video-box { border: 1px solid black; }
+        .info { margin-left: 40px; }
+        h2 { color: darkred; }
+    </style>
+</head>
+<body>
+    <div class="video-box">
+        <img src="{{ url_for('video') }}" width="480">
+    </div>
+
+    <div class="info">
+        <h2>Last Detected Plate:</h2>
+        <p id="plakaMesaji">Waiting for detection...</p>
+        <a href="/ekle">Add Plate</a>
+    </div>
+
+    <script>
+        // Her 1 saniyede bir mesajı güncelle
+        setInterval(() => {
+            fetch('/mesaj')
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('plakaMesaji').innerText = data.mesaj;
+                });
+        }, 1000);
+    </script>
+</body>
+</html>
+
