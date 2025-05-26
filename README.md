@@ -56,6 +56,7 @@ DroidCam veya EpocCam ile mobil cihazlar desteklenebilir.
 # 6. Webcam, Video ve Mobil Seçenekleri
 
    <img width="666" alt="Ekran Resmi 2025-05-27 00 16 04" src="https://github.com/user-attachments/assets/efc1aa38-d480-43a1-90fb-3ab65e3ad2a2" />
+   
 # 7. Yatay Video Sorunu Çözümü
 
 Bazı telefon kameraları dikey video verir. Çerçeveyi yatay döndürmek için bu satır aktif edilir:
