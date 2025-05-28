@@ -50,8 +50,8 @@ You can stream your phone's camera to the PC:
 
 Update this line in `app.py`:
 
-```python
 camera_source = "http://<your_phone_ip>:4747/video"
+
 
 ## 🔐 Access Logic
 
@@ -75,7 +75,7 @@ camera_source = "http://<your_phone_ip>:4747/video"
 ## 👨‍💻 Author
 
 Developed by **Haticenur Yalman**  
-This project was created as part of the *Introduction to Computer Vision* course.
+This project was created as part of the *Introduction to Computer Vision course.
 
 
 
