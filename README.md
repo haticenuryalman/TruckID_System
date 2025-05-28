@@ -52,6 +52,10 @@ Update this line in `app.py`:
 
 camera_source = "http://<your_phone_ip>:4747/video"
 
+The system was tested using a mobile camera streamed through the IP Webcam app. : https://youtu.be/BMxCdjOMy6g
+
+Tested using pre-recorded video footage. : https://youtu.be/USk4UG6hEFU
+
 
 ## 🔐 Access Logic
 
