@@ -1,89 +1,56 @@
-# Gerçek Zamanlı Tır Tanıma ve Plaka Doğrulama Sistemi
+# 🚛 Intelligent Truck & Plate Recognition System
 
-Bu proje, Flask tabanlı bir web uygulaması olarak gerçek zamanlı tır ve plaka tanıma işlemi yapmaktadır. Kamera görüntüsü üzerinden aracın tır veya otomobil olduğu tespit edilir, plakası okunur ve SQLite veritabanında daha önceden kayıtlı olan plakalarla karşılaştırılır. Plaka kayıtlıysa "Access Granted" (Geçiş Onaylandı), kayıtlı değilse "Access Denied" (Geçiş Reddedildi) uyarısı verilir. Araç tır değilse buzzer uyarısı simüle edilir.
+A real-time Flask web application for detecting trucks and recognizing license plates using YOLOv8 and OCR technologies. Designed to control access based on vehicle type and license plate verification against a local database. Supports mobile and PC webcams, and offers a responsive web UI for field use.
 
-# ✨ Temel Amaç:
+#  🎯 Project Goal
+To develop a smart security system capable of:
 
-Kamera görüntüsünden gelen bilgileri işleyerek:
+Detecting trucks in real-time video
+Extracting and recognizing license plates
+Matching recognized plates with a registered whitelist
+Triggering access (gate open) or denial (buzzer alert) decisions
+Providing a responsive web interface for monitoring and registration
+# 📸 Live Demo Overview
+✅ Detects trucks only (cars are rejected)
+✅ Reads the plate via OCR
+✅ Grants access if the plate is registered
+✅ Blocks access if the plate is unknown
+✅ Rejects cars with warning
+✅ Web interface displays video + messages
+✅ Extra page to register new plates
+# 🧠 Tech Stack
+Component	Technology
+Object Detection	YOLOv8 (Ultralytics)
+OCR Engine	EasyOCR or PaddleOCR
+Backend	Python + Flask
+Database	SQLite
+Frontend	HTML5 + Bootstrap
+Video Input	PC/Mobile Webcam (IP) via OpenCV
 
-Tır/kamyon algılamak
+# 📱 Mobile Camera Usage (Optional)
+You can stream your phone's camera to the PC:
 
-Plaka tanıyıp doğrulamak
+Android: Install DroidCam
+iOS: Use EpocCam or NDI HX Camera
+Update this line in app.py:
 
-İlgili duruma göre karar vermek
-
-# 🔹 Adım Adım Proje Gelişimi
-
-# 1. YOLOv8 Modeliyle Nesne Tespiti
-
-Roboflow kullanılarak 3 sınıflı (truck, car, plate) bir dataset oluşturuldu. YOLOv8 kullanılarak bu veri seti üzerinde ağırılıklar eğitildi:
-
-<img width="349" alt="Ekran Resmi 2025-05-27 00 10 21" src="https://github.com/user-attachments/assets/a4212c9b-936f-4303-859e-1c3c193e4286" />
-
-# 2. EasyOCR ile Plaka Tanıma
-
-YOLO ile plaka tespit edildikten sonra bu plaka bölgesi işlenip EasyOCR ile okunur:
-
-<img width="349" alt="Ekran Resmi 2025-05-27 00 11 25" src="https://github.com/user-attachments/assets/46b38447-d897-40a0-8b6d-2e9b963d7145" />
-
-OCR sonucunda elde edilen yazı regex ile filtrelenip sadece A-Z/0-9 karakterleri kalacak şekilde temizlenir.
-
-# 3. Flask Arayüz Geliştirme
-
-Flask kullanılarak basit bir web uygulaması geliştirildi. 2 ana sayfa vardır:
-
-/ : Canlı kamera yayını + anlık mesajlar
-
-/ekle : Yeni plaka ekleme formu
-
-HTML sayfaları Bootstrap ile mobil uyumlu hale getirildi.
-
-<img width="542" alt="Ekran Resmi 2025-05-27 00 12 42" src="https://github.com/user-attachments/assets/cd216a7b-ccdd-40f3-b1ee-561750bbc628" />
-
-# 4. SQLite ile Plaka Saklama
-
-Uygulama ilk başladığında bir plakalar.db dosyası oluşturur. Kullanıcı yeni plaka ekledikçe veritabanına yazılır.
-
-<img width="666" alt="Ekran Resmi 2025-05-27 00 14 22" src="https://github.com/user-attachments/assets/3a5ed59a-6e40-4022-8ca8-ed6b1fbe36b7" />
-
-# 5. Mobil Cihaz Kamerası ile Test
-
-Uygulama mobil kameradan test edilebilecek şekilde geliştirildi. Telefon kameranın IP adresi "camera_source" değişkenine atanır:
-
-<img width="666" alt="Ekran Resmi 2025-05-27 00 15 05" src="https://github.com/user-attachments/assets/4da23f83-33b7-4af8-b4ab-56c60767c036" />
-
-DroidCam veya EpocCam ile mobil cihazlar desteklenebilir.
-
-IP WEBCAM ile mobil kameradan test: https://youtu.be/BMxCdjOMy6g
-
-# 6. Webcam, Video ve Mobil Seçenekleri
-
-   <img width="666" alt="Ekran Resmi 2025-05-27 00 16 04" src="https://github.com/user-attachments/assets/efc1aa38-d480-43a1-90fb-3ab65e3ad2a2" />
-
-   Daha önceden kaydedilmiş video ile test: https://youtu.be/USk4UG6hEFU
-   
-# 7. Yatay Video Sorunu Çözümü
-
-Bazı telefon kameraları dikey video verir. Çerçeveyi yatay döndürmek için bu satır aktif edilir:
-
-<img width="666" alt="Ekran Resmi 2025-05-27 00 17 12" src="https://github.com/user-attachments/assets/b70db8cd-9f48-4f89-bc5a-a9abe41ff350" />
+camera_source = "http://<your_phone_ip>:4747/video"
 
 
-# 🌐 Projede Ne Yaptık?
+# 🔐 Access Logic
+Vehicle Type	Plate Registered?	Action
+Truck	✅ Yes	✅ Access Granted
+Truck	❌ No	❌ Access Denied
+Car	❌ Irrelevant	🔔 Buzzer Alert
 
-YOLOv8 ile tır, araba ve plaka tespiti yaptık
+#  ✅ Features
+Real-time object detection
+OCR plate recognition
+SQLite plate validation
+Live video + status UI
+Responsive design for mobile/desktop
+Admin panel to add new plates
 
-EasyOCR ile plakaları okuduk
-
-Veritabanı kontrolü ile plaka eşleştirme yaptık
-
-Flask arayüzü ile mobil uyumlu, responsive bir arayüz yaptık
-
-Mobil kamerayla canlı test yeteneği ekledik
-
-Yönlendirme mesajlarıyla kullanıcıyı bilgilendiren sistem tasarladık
-
-Tüm kodlar, HTML sayfaları ve model dosyası ile birlikte proje çalışır hâle getirilmiştir.
-
-
-
+#  👨‍💻 Author
+Developed by Haticenur Yalman
+This work was carried out within the scope of the Introduction to Computer Vision course.
