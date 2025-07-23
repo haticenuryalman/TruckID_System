@@ -1,10 +1,10 @@
-# 🚛 Intelligent Truck & Plate Recognition System
+# Intelligent Truck & Plate Recognition System
 
 A real-time Flask web application for detecting trucks and recognizing license plates using YOLOv8 and OCR technologies. Designed to control access based on vehicle type and license plate verification against a local database. Supports mobile and PC webcams, and offers a responsive web UI for field use.
 
 ---
 
-## 🎯 Project Goal
+## Project Goal
 
 To develop a smart security system capable of:
 
@@ -16,19 +16,19 @@ To develop a smart security system capable of:
 
 ---
 
-## 📸 Live Demo Overview
+## Live Demo Overview
 
-- ✅ Detects trucks only (cars are rejected)  
-- ✅ Reads the plate via OCR  
-- ✅ Grants access if the plate is registered  
-- ✅ Blocks access if the plate is unknown  
-- ✅ Rejects cars with warning  
-- ✅ Web interface displays video + messages  
-- ✅ Extra page to register new plates  
+- Detects trucks only (cars are rejected)  
+- Reads the plate via OCR  
+- Grants access if the plate is registered  
+- Blocks access if the plate is unknown  
+- Rejects cars with warning  
+- Web interface displays video + messages  
+- Extra page to register new plates  
 
 ---
 
-## 🧠 Tech Stack
+## Tech Stack
 
 | Component         | Technology               |
 |------------------|--------------------------|
@@ -41,7 +41,7 @@ To develop a smart security system capable of:
 
 ---
 
-## 📱 Mobile Camera Usage (Optional)
+## Mobile Camera Usage (Optional)
 
 You can stream your phone's camera to the PC:
 
@@ -57,7 +57,7 @@ The system was tested using a mobile camera streamed through the IP Webcam app. 
 Tested using pre-recorded video footage. : https://youtu.be/USk4UG6hEFU
 
 
-## 🔐 Access Logic
+## Access Logic
 
 | Vehicle Type | Plate Registered? | Action           |
 |--------------|-------------------|------------------|
@@ -65,14 +65,14 @@ Tested using pre-recorded video footage. : https://youtu.be/USk4UG6hEFU
 | Truck        | ❌ No             | ❌ Access Denied  |
 | Car          | ❌ Irrelevant     | 🔔 Buzzer Alert   |
 
-## ✅ Features
+## Features
 
-- ⚡ **Real-time object detection**
-- 🔍 **OCR plate recognition**
-- 🗂️ **SQLite plate validation**
-- 🎥 **Live video + access status UI**
-- 📱 **Responsive design (mobile & desktop)**
-- 🛠️ **Admin panel to register new plates**
+- **Real-time object detection**
+- **OCR plate recognition**
+- **SQLite plate validation**
+- **Live video + access status UI**
+- **Responsive design (mobile & desktop)**
+-  **Admin panel to register new plates**
 
 ---
 
