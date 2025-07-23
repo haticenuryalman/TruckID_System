@@ -61,9 +61,9 @@ Tested using pre-recorded video footage. : https://youtu.be/USk4UG6hEFU
 
 | Vehicle Type | Plate Registered? | Action           |
 |--------------|-------------------|------------------|
-| Truck        | ✅ Yes            | ✅ Access Granted |
-| Truck        | ❌ No             | ❌ Access Denied  |
-| Car          | ❌ Irrelevant     | 🔔 Buzzer Alert   |
+| Truck        | Yes               | Access Granted   |
+| Truck        | No                | Access Denied    |
+| Car          | Irrelevant        | Buzzer Alert     |
 
 ## Features
 
@@ -76,7 +76,7 @@ Tested using pre-recorded video footage. : https://youtu.be/USk4UG6hEFU
 
 ---
 
-## 👨‍💻 Author
+## Author
 
 Developed by **Haticenur Yalman**  
 This project was created as part of the Introduction to Computer Vision course.
