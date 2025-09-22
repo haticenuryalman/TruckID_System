@@ -79,7 +79,6 @@ Tested using pre-recorded video footage. : https://youtu.be/USk4UG6hEFU
 ## Author
 
 Developed by **Haticenur Yalman**  
-This project was created as part of the Introduction to Computer Vision course.
 
 
 
